@@ -1,10 +1,10 @@
 <?php get_header(); ?>
 
-<?php if ( have_posts() ): ?>
+<?php if (have_posts()): ?>
     <div class="row">
-        <?php while( have_posts()  ) : the_post(); ?>
+        <?php while(have_posts()): the_post(); ?>
             <div class="col-sm-4">
-                <div class="card" style="width: 18rem;">
+                <div class="card">
                     <?php the_post_thumbnail('post-thumbnail-small', ['class' => 'card-img-top', 'alt' => 'Card image', 'style' => 'height: auto']); ?>
                     <div class="card-body">
                         <h5 class="card-title"><?php the_title()?></h5>
@@ -15,6 +15,8 @@
             </div>
         <?php endwhile; ?> 
     </div>
+<?php else: ?>
+    <h1>Pas d'articles</h1>
 <?php endif; ?>
 
 <?php get_footer(); ?>
